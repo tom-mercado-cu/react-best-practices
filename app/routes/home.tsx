@@ -13,6 +13,10 @@ export async function loader() {
     routes: [
       { path: "/avoid-prop-drilling", name: "Avoid Prop Drilling" },
       { path: "/useeffect-initial-state", name: "useEffect Initial State" },
+      {
+        path: "/component-declared-in-component",
+        name: "Components declared into components",
+      },
     ],
   };
 }
