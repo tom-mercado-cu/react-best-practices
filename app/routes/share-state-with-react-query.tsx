@@ -126,77 +126,75 @@ export function meta() {
 
 export default function ShareStateWithReactQuery() {
   return (
-    <div className="container mx-auto p-8">
-      <Card className="shadow-lg">
-        <CardHeader>
-          <CardTitle className="text-2xl font-bold">
-            Sharing State with React Query
-          </CardTitle>
-          <CardDescription>
-            This example demonstrates how React Query automatically shares
-            cached data across components using the same query key, eliminating
-            the need for prop drilling or global state management.
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <Child1 />
-            <Child2 />
-          </div>
+    <Card className="shadow-lg">
+      <CardHeader>
+        <CardTitle className="text-2xl font-bold">
+          Sharing State with React Query
+        </CardTitle>
+        <CardDescription>
+          This example demonstrates how React Query automatically shares cached
+          data across components using the same query key, eliminating the need
+          for prop drilling or global state management.
+        </CardDescription>
+      </CardHeader>
+      <CardContent className="space-y-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <Child1 />
+          <Child2 />
+        </div>
 
-          <InvalidateButton />
+        <InvalidateButton />
 
-          <Card className="bg-muted/50 border-dashed">
-            <CardHeader>
-              <CardTitle className="text-lg">Key Benefits</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <ul className="list-disc pl-5 space-y-2 text-muted-foreground">
-                <li>
-                  <strong>Automatic Caching:</strong> Data is cached by query
-                  key and shared across components
-                </li>
-                <li>
-                  <strong>No Prop Drilling:</strong> Components can access the
-                  same data without passing props
-                </li>
-                <li>
-                  <strong>Background Updates:</strong> Stale data is
-                  automatically refetched in the background
-                </li>
-                <li>
-                  <strong>Loading States:</strong> Built-in loading and error
-                  states for better UX
-                </li>
-                <li>
-                  <strong>Cache Invalidation:</strong> Easy cache management
-                  with invalidation methods
-                </li>
-              </ul>
-            </CardContent>
-          </Card>
+        <Card className="bg-muted/50 border-dashed">
+          <CardHeader>
+            <CardTitle className="text-lg">Key Benefits</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <ul className="list-disc pl-5 space-y-2 text-muted-foreground">
+              <li>
+                <strong>Automatic Caching:</strong> Data is cached by query key
+                and shared across components
+              </li>
+              <li>
+                <strong>No Prop Drilling:</strong> Components can access the
+                same data without passing props
+              </li>
+              <li>
+                <strong>Background Updates:</strong> Stale data is automatically
+                refetched in the background
+              </li>
+              <li>
+                <strong>Loading States:</strong> Built-in loading and error
+                states for better UX
+              </li>
+              <li>
+                <strong>Cache Invalidation:</strong> Easy cache management with
+                invalidation methods
+              </li>
+            </ul>
+          </CardContent>
+        </Card>
 
-          <Card className="bg-blue-50 border-blue-200 dark:bg-blue-900/20 dark:border-blue-800">
-            <CardHeader>
-              <CardTitle className="text-blue-900 dark:text-blue-100">
-                How It Works
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-blue-800 dark:text-blue-200">
-                Both components use the same query key{" "}
-                <code className="bg-blue-100 dark:bg-blue-800 px-1 rounded">
-                  ["cat-facts"]
-                </code>
-                . When the first component fetches data, it's cached. The second
-                component automatically receives the cached data without making
-                another network request. Check the browser's Network tab to see
-                only one API call is made!
-              </p>
-            </CardContent>
-          </Card>
-        </CardContent>
-      </Card>
-    </div>
+        <Card className="bg-blue-50 border-blue-200 dark:bg-blue-900/20 dark:border-blue-800">
+          <CardHeader>
+            <CardTitle className="text-blue-900 dark:text-blue-100">
+              How It Works
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p className="text-blue-800 dark:text-blue-200">
+              Both components use the same query key{" "}
+              <code className="bg-blue-100 dark:bg-blue-800 px-1 rounded">
+                ["cat-facts"]
+              </code>
+              . When the first component fetches data, it's cached. The second
+              component automatically receives the cached data without making
+              another network request. Check the browser's Network tab to see
+              only one API call is made!
+            </p>
+          </CardContent>
+        </Card>
+      </CardContent>
+    </Card>
   );
 }

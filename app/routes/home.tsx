@@ -31,22 +31,20 @@ export default function Home() {
   }>();
 
   return (
-    <div className="container mx-auto p-8">
-      <div className="mt-8">
-        <h2 className="text-2xl font-semibold mb-4">Available Routes</h2>
-        <ul className="list-disc pl-6 space-y-2">
-          {routes.map((route) => (
-            <li key={route.path}>
-              <Link
-                to={route.path}
-                className="text-blue-600 hover:underline hover:text-blue-800"
-              >
-                {route.name}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
+    <div className="mt-8">
+      <h2 className="text-2xl font-semibold mb-4">Available Routes</h2>
+      <ul className="list-disc pl-6 space-y-2">
+        {routes.map((route) => (
+          <li key={route.path}>
+            <Link
+              to={route.path}
+              className="text-blue-600 hover:underline hover:text-blue-800"
+            >
+              {route.name}
+            </Link>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }

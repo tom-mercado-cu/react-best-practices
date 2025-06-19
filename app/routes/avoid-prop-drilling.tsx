@@ -13,7 +13,7 @@ export function meta() {
 
 export default function AvoidPropDrilling() {
   return (
-    <div className="container mx-auto p-8">
+    <>
       <h1 className="text-3xl font-bold mb-6">Avoiding Prop Drilling</h1>
       <p className="text-lg mb-4">
         This page demonstrates how to avoid prop drilling in React applications.
@@ -27,6 +27,6 @@ export default function AvoidPropDrilling() {
           <Example2 />
         </div>
       </div>
-    </div>
+    </>
   );
 }
