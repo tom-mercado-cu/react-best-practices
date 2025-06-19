@@ -11,6 +11,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import type { Route } from "./+types/root";
 import "./app.css";
 import { BackButton } from "./components/back-button";
+import { GithubRepositoryButtonForRoute } from "./components/github-repository-button-for-route";
 import { Header } from "./components/header";
 
 const queryClient = new QueryClient();
@@ -50,7 +51,10 @@ export default function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <Header />
-      <BackButton />
+      <div className="flex justify-between container mx-auto items-end">
+        <BackButton />
+        <GithubRepositoryButtonForRoute />
+      </div>
       <div className="container mx-auto px-4 py-4">
         <Outlet />
       </div>
