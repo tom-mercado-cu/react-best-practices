@@ -17,6 +17,10 @@ export async function loader() {
         path: "/component-declared-in-component",
         name: "Components declared into components",
       },
+      {
+        path: "/share-state-with-react-query",
+        name: "Share State With React Query",
+      },
     ],
   };
 }

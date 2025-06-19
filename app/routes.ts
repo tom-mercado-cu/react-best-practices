@@ -5,4 +5,8 @@ export default [
   route("avoid-prop-drilling", "routes/avoid-prop-drilling.tsx"),
   route("useeffect-initial-state", "routes/useeffect-initial-state.tsx"),
   route("component-declared-in-component", "routes/component-rendering.tsx"),
+  route(
+    "share-state-with-react-query",
+    "routes/share-state-with-react-query.tsx"
+  ),
 ] satisfies RouteConfig;
