@@ -89,7 +89,7 @@ export default function Home() {
                 >
                   <GithubRepositoryButton
                     className="bg-blue-600 hover:bg-blue-700 text-white"
-                    path="routes/home.tsx"
+                    path="/"
                   />
                 </a>
               </div>
