@@ -1,4 +1,4 @@
-import { Link, useLoaderData } from "react-router";
+import { Link } from "react-router";
 import { Badge } from "~/components/ui/badge";
 import { Button } from "~/components/ui/button";
 import {
@@ -8,6 +8,7 @@ import {
   CardHeader,
   CardTitle,
 } from "~/components/ui/card";
+import { routesData } from "~/routes";
 
 export function meta() {
   return [
@@ -19,49 +20,7 @@ export function meta() {
   ];
 }
 
-export async function loader() {
-  // In a real app, you might want to fetch this from your router config
-  return {
-    routes: [
-      {
-        path: "/avoid-prop-drilling",
-        name: "Avoid Prop Drilling",
-        description:
-          "Learn how to avoid prop drilling using composition patterns",
-        badge: "State Management",
-      },
-      {
-        path: "/useeffect-initial-state",
-        name: "useEffect Initial State",
-        description: "Understanding useEffect and initial state management",
-        badge: "Hooks",
-      },
-      {
-        path: "/component-rendering",
-        name: "Component Rendering",
-        description: "Learn about component rendering and state preservation",
-        badge: "Performance",
-      },
-      {
-        path: "/share-state-with-react-query",
-        name: "Share State With React Query",
-        description: "Share state across components using React Query caching",
-        badge: "Data Fetching",
-      },
-    ],
-  };
-}
-
 export default function Home() {
-  const { routes } = useLoaderData<{
-    routes: Array<{
-      path: string;
-      name: string;
-      description: string;
-      badge: string;
-    }>;
-  }>();
-
   return (
     <div className="container mx-auto p-8">
       <Card className="shadow-lg">
@@ -80,7 +39,7 @@ export default function Home() {
               Available Examples
             </h3>
             <div className="space-y-3">
-              {routes.map((route, index) => (
+              {routesData.map((route, index) => (
                 <Link
                   key={route.path}
                   className="flex items-center justify-between p-4 rounded-lg border border-border hover:bg-muted/50 transition-colors duration-200"
